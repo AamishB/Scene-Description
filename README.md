@@ -1,6 +1,6 @@
 # Scene Description System for Visually Impaired
 
-A real-time AI-powered scene understanding system that combines YOLOv8 object detection and BLIP vision-language models to assist visually impaired individuals. The system provides comprehensive audio descriptions of surroundings, including object detection, spatial awareness, and natural language scene descriptions.
+A real-time AI-powered scene understanding system that combines YOLOv8 object detection and BLIP vision-language models to assist visually impaired individuals. The system provides comprehensive audio descriptions of scenes, detects objects with spatial awareness, and generates natural language scene captions.
 
 ## 🌟 Key Features
 
@@ -46,6 +46,53 @@ A real-time AI-powered scene understanding system that combines YOLOv8 object de
 - **Scene Overlay**: Real-time scene caption display on video
 - **Status Indicators**: Audio and detection status indicators
 
+## 📸 Demo & Examples
+
+To better visualize how the Scene Description System works, you can add demo images to the `demo/` directory. Here's the recommended structure:
+
+```
+demo/
+├── screenshots/
+│   ├── detection_example_1.png          # Object detection with bounding boxes
+│   ├── detection_example_2.png          # Multiple objects scenario
+│   └── console_output.png               # Console showing descriptions
+│
+├── sample_videos/
+│   ├── demo_scene_1.mp4                 # Sample video clip (kitchen scene)
+│   └── demo_scene_2.mp4                 # Sample video clip (office scene)
+│
+└── README_DEMO.md                       # Detailed demo guide
+```
+
+### Adding Demo Images
+
+1. **Create the demo directory**:
+   ```bash
+   mkdir -p demo/screenshots
+   mkdir -p demo/sample_videos
+   ```
+
+2. **Add your screenshots and videos** to these directories
+
+3. **Update this section** with image references:
+   ```markdown
+   ![Kitchen Detection Example](demo/screenshots/detection_example_1.png)
+   ![System Console Output](demo/screenshots/console_output.png)
+   ```
+
+### Example Output
+
+**Scene Caption**: "A kitchen with stainless steel appliances, a person preparing food at the counter, with visible utensils and cookware."
+
+**Object Detection**: 
+- Person (center, near) - confidence: 0.92
+- Microwave (right, medium) - confidence: 0.87
+- Cup (center, near) - confidence: 0.85
+
+**Spatial Description**: "I detect one person in the center, very close. To the right at medium distance is a microwave."
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -64,10 +111,14 @@ Scene-Description/
 │   ├── object_detector.py        # YOLOv8 object detection
 │   └── scene_recognizer.py       # BLIP scene captioning
 │
-└── utils/                         # Utility modules
-    ├── __init__.py
-    ├── video_handler.py          # Video capture & streaming
-    └── audio_feedback.py         # Text-to-speech system
+├── utils/                         # Utility modules
+│   ├── __init__.py
+│   ├── video_handler.py          # Video capture & streaming
+│   └── audio_feedback.py         # Text-to-speech system
+│
+└── demo/                          # Demo images and examples (create this)
+    ├── screenshots/              # Example detection screenshots
+    └── sample_videos/            # Sample video clips
 ```
 
 ### Module Descriptions
@@ -999,111 +1050,24 @@ This project wouldn't be possible without these amazing open-source projects and
 
 ### AI Models & Frameworks
 
-- **[YOLOv8](https://github.com/ultralytics/ultralytics)** by Ultralytics - State-of-the-art object detection
-- **[BLIP](https://github.com/salesforce/BLIP)** by Salesforce Research - Vision-language understanding
-- **[PyTorch](https://pytorch.org/)** by Meta AI - Deep learning framework
-- **[Transformers](https://huggingface.co/transformers/)** by Hugging Face - NLP and vision-language models
+- **YOLOv8** by Ultralytics for the state-of-the-art object detection model
+- **BLIP** by Salesforce for vision-language understanding
+- **PyTorch** by Meta AI for the deep learning framework
+- **Transformers** by Hugging Face for pre-trained models
+- **OpenCV** for computer vision capabilities
 
 ### Libraries & Tools
 
-- **[OpenCV](https://opencv.org/)** - Computer vision and image processing
-- **[pyttsx3](https://github.com/nateshmbhat/pyttsx3)** - Text-to-speech conversion
-- **[NumPy](https://numpy.org/)** - Numerical computing
+- **pyttsx3** for text-to-speech functionality
+- **NumPy** and **Pillow** for numerical and image processing
+- **Ultralytics** for YOLOv8 integration
 
-### Community
+### Inspiration & Support
 
-- OpenCV community for excellent documentation
-- Hugging Face community for model hosting
-- GitHub community for feedback and contributions
-
-### Inspiration
-
-Built with the goal of improving accessibility and independence for visually impaired individuals. Inspired by existing assistive technologies and the need for affordable, open-source solutions.
-
-### Special Thanks
-
-- To all contributors who help improve this project
-- To the accessibility community for valuable feedback
-- To researchers and developers working on assistive technologies
+- The open-source accessibility community
+- Visually impaired users and advocates
+- All contributors and community members
 
 ---
 
-## 📞 Contact & Support
-
-### Author
-
-**Aamish Baloch**
-
-- GitHub: [@AamishB](https://github.com/AamishB)
-- Repository: [Scene-Description](https://github.com/AamishB/Scene-Description)
-
-### Getting Help
-
-- 📖 Check the [Documentation](#) in this README
-- 🐛 Report bugs via [GitHub Issues](https://github.com/AamishB/Scene-Description/issues)
-- 💡 Request features via [GitHub Issues](https://github.com/AamishB/Scene-Description/issues)
-- 💬 Ask questions in [Discussions](https://github.com/AamishB/Scene-Description/discussions)
-
-### Quick Links
-
-- [Installation Guide](#-installation)
-- [Configuration](#️-configuration)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
-
----
-
-## ⚠️ Important Disclaimer
-
-**This system is designed as an assistive tool and should NOT be used as the sole means of navigation or safety for visually impaired individuals.**
-
-### Safety Guidelines
-
-- ✋ Always use in conjunction with traditional mobility aids (white cane, guide dog, etc.)
-- ✋ Do not rely solely on this system for navigation or obstacle avoidance
-- ✋ Be aware that AI models can make mistakes or miss important objects
-- ✋ Test thoroughly in safe environments before use in unfamiliar areas
-- ✋ Keep audio volume at safe levels to maintain environmental awareness
-- ✋ Use appropriate safety techniques and training for visually impaired mobility
-
-### Limitations
-
-- Detection accuracy depends on lighting, camera quality, and object visibility
-- Scene recognition may not be 100% accurate in all situations
-- System performance varies based on hardware capabilities
-- Audio descriptions may lag behind real-time scene changes
-- Not suitable for high-speed navigation or critical safety decisions
-
-### Responsible Use
-
-- This is an assistive technology, not a replacement for human judgment
-- Users should receive proper training before depending on the system
-- Supervise initial use in controlled environments
-- Report any critical issues or safety concerns immediately
-- Regular testing and calibration recommended
-
----
-
-## 🚀 Quick Start Guide
-
-Ready to get started? Follow these steps:
-
-1. **Download IP Webcam**: [Google Play Store](https://play.google.com/store/apps/details?id=com.pas.webcam)
-2. **Clone Repository**: `git clone https://github.com/AamishB/Scene-Description`
-3. **Install Dependencies**: `pip install -r requirements.txt`
-4. **Configure Camera**: Edit `config/settings.py` with your IP camera URL
-5. **Run System**: `python cv.py`
-
-For detailed instructions, see the [Installation](#-installation) section.
-
----
-
-<div align="center">
-
-**Made with ❤️ for accessibility**
-
-⭐ If you find this project useful, please consider giving it a star on GitHub! ⭐
-
-[Report Bug](https://github.com/AamishB/Scene-Description/issues) · [Request Feature](https://github.com/AamishB/Scene-Description/issues) · [Contribute](https://github.com/AamishB/Scene-Description/pulls)
-
-</div>
+**Made with ❤️ to assist visually impaired individuals**
