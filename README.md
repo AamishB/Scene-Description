@@ -46,52 +46,13 @@ A real-time AI-powered scene understanding system that combines YOLOv8 object de
 - **Scene Overlay**: Real-time scene caption display on video
 - **Status Indicators**: Audio and detection status indicators
 
-## 📸 Demo & Examples
+## 📸 Example Screenshots
 
-To better visualize how the Scene Description System works, you can add demo images to the `demo/` directory. Here's the recommended structure:
-
-```
-demo/
-├── screenshots/
-│   ├── detection_example_1.png          # Object detection with bounding boxes
-│   ├── detection_example_2.png          # Multiple objects scenario
-│   └── console_output.png               # Console showing descriptions
-│
-├── sample_videos/
-│   ├── demo_scene_1.mp4                 # Sample video clip (kitchen scene)
-│   └── demo_scene_2.mp4                 # Sample video clip (office scene)
-│
-└── README_DEMO.md                       # Detailed demo guide
-```
-
-### Adding Demo Images
-
-1. **Create the demo directory**:
-   ```bash
-   mkdir -p demo/screenshots
-   mkdir -p demo/sample_videos
-   ```
-
-2. **Add your screenshots and videos** to these directories
-
-3. **Update this section** with image references:
-   ```markdown
-   ![Kitchen Detection Example](demo/screenshots/detection_example_1.png)
-   ![System Console Output](demo/screenshots/console_output.png)
-   ```
-
-### Example Output
-
-**Scene Caption**: "A kitchen with stainless steel appliances, a person preparing food at the counter, with visible utensils and cookware."
-
-**Object Detection**: 
-- Person (center, near) - confidence: 0.92
-- Microwave (right, medium) - confidence: 0.87
-- Cup (center, near) - confidence: 0.85
-
-**Spatial Description**: "I detect one person in the center, very close. To the right at medium distance is a microwave."
-
----
+<br/>
+<img src="screenshots/s1.jpeg" alt="Objects on a Desk" style="width:100%; height:auto; display:block; margin:0 auto; border-radius:10px;" />
+<br/>
+<img src="screenshots/s2.jpeg" alt="Working Person" style="width:100%; height:auto; display:block; margin:0 auto; border-radius:10px;" />
+<br/>
 
 ## 📁 Project Structure
 
@@ -116,9 +77,7 @@ Scene-Description/
 │   ├── video_handler.py          # Video capture & streaming
 │   └── audio_feedback.py         # Text-to-speech system
 │
-└── demo/                          # Demo images and examples (create this)
-    ├── screenshots/              # Example detection screenshots
-    └── sample_videos/            # Sample video clips
+└── screenshots/              # Example detection screenshots
 ```
 
 ### Module Descriptions
@@ -304,14 +263,12 @@ The system will:
 2. **The system announces**: "Scene description system started with scene recognition. Press Q to quit, C for scene caption."
 
 3. **Automatic operation**:
-
    - Continuously detects objects and updates bounding boxes
    - Announces new objects: "New objects detected: person, laptop"
    - Announces removed objects: "Objects no longer visible: cup"
    - Periodic scene summaries every 5 seconds (configurable)
 
 4. **Manual triggers**:
-
    - Press **C** for immediate scene caption
    - Press **S** for full scene description with objects
    - Press **P** to see console summary
@@ -893,13 +850,11 @@ We welcome contributions to improve the Scene Description System! This is an ope
    ```
 
 3. **Make Your Changes**
-
    - Follow existing code style and patterns
    - Add comments for complex logic
    - Update documentation as needed
 
 4. **Test Your Changes**
-
    - Test with different video sources
    - Verify audio feedback works
    - Check performance impact
@@ -1069,5 +1024,3 @@ This project wouldn't be possible without these amazing open-source projects and
 - All contributors and community members
 
 ---
-
-**Made with ❤️ to assist visually impaired individuals**
