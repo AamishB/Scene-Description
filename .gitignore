@@ -110,9 +110,6 @@ logs/
 *.avi
 *.mov
 *.mkv
-*.jpg
-*.jpeg
-*.png
 *.gif
 *.bmp
 # Uncomment the line below if you want to exclude the YOLO model file
